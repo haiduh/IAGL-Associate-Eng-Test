@@ -1,57 +1,36 @@
-# TODO App
+# TODO App – Completed Tech Task (C113766)
 
-## The task
+## Summary of Changes
 
-We want to build a TODO web app.
+### Backend (`/backend`)
+- Implemented `POST /api/todo` to allow adding new TODO items.
+- Implemented `DELETE /api/todo` to allow removing existing TODO items.
+- Updated existing code to store and delete tasks.
+- Added logic in:
+  - `repository/todo.js` → stores and removes tasks.
+  - `service/todo.js` → validates and forwards add/remove requests to repository.
+  - `server.js` → routes the POST and DELETE requests.
+- Added basic validation (no empty tasks).
 
-It will allow the users to keep track and organize their tasks.
+### Frontend (`/src`)
+- Added a **text input** and **"Add" button** to submit new TODO items.
+- Added a **"Remove" button** beside each TODO item to delete it.
+- Used `fetch` to send POST and DELETE requests to backend.
+- On success, the UI updates immediately to show added or removed items.
+- Included basic input validation (ignores empty tasks).
+- Styled input, add, and remove buttons for clarity and responsiveness.
 
-Your objective is to do the following user story.
+## Screenshots
 
-```
-As a user
-I want to be able to add a TODO item
-so I can track the things I want to do.
-```
+Performed the provided tests for service and repository, both passed successfully.
 
-The app has two parts, a frontend built in React and a Backend built in NodeJS.
+### Test 1
+![test 1](https://github.com/user-attachments/assets/5aa178d5-106e-40fc-b67e-8925ea05dae7)
 
-The backend exposes an API to fetch the TODO items, that are be displayed in the page.
-
-To complete the task you will be required to work on both backend and frontend parts.
-
-Please write code as you would for it to be production ready.
-
-While it isn't required to make the front end look slick and well designed we would appreciate any effort that you put into UI design and UX.
-
-
-## Starting the application
-
-- Backend: (In the backend folder)
-```shell
-npm install
-npm start # Start the server in the 9091 port
-```
-
-- Frontend: (In the root folder)
-```shell
-npm install
-npm start # Starts the app in http://localhost:3000
-```
-
-## Backend
-
-You can find it in the `/backend` directory. It's built in Express and stores the TODO items in memory.
-
-* GET /api/todo
-
-![get todo picture](docs/get_todo_endpoint.png "Get TODO")
-
-## Frontend
-
-You can find it in the `src` folder. It has been build with React and Redux. The list of todos are fetched asynchronously from the backend via Redux-thunk.
-
-You can assume the backend is running under `http://localhost:9091/api/todo`
+### Test 2
+![test 2](https://github.com/user-attachments/assets/924d6d72-d0eb-4035-9133-848a3c6ae84d)
 
 
-![get todo FE](docs/get_todo_frontend.png "GET todo frontend")
+> All screenshots are included in the `/backend tests` folder.
+
+---
