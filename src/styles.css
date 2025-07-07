@@ -1,22 +1,122 @@
+
 .todo-app {
-    font-family: sans-serif;
+  font-family: 'Nunito', sans-serif;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
 }
 
-/** add todo **/
-.add-todo {
-    margin-left: 0.5rem;
-}
-
-/** todo list **/
+/* todo list */
 .todo-list {
-    margin-top: 1rem;
-    text-align: left;
-    list-style: none;
+  margin-top: 1.5rem;
+  padding-left: 0;
+  list-style: none;
+  text-align: left;
 }
 
-/** todo item **/
+/* todo item */
 .todo-item {
-    font-family: monospace;
-    cursor: pointer;
-    line-height: 1.5;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 8px 12px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-item:hover {
+  background-color: #f9f9f9;
+}
+
+/* Text Field */
+.txt-box {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  width: calc(100% - 150px); /* makes the box bigger */
+  box-sizing: border-box;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.txt-box:focus {
+  box-shadow: 0 0 0 2px rgba(180, 57, 53, 0.2);
+}
+
+/* Add Button */
+.add-btn {
+  background: #00db6e;
+  border: solid 1px #00db6e;
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 16px;
+  min-height: 40px;
+  padding: 12px 16px;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  vertical-align: middle;
+  margin-left: 0.75rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.add-btn:hover {
+  background-color: #fff;
+  color: #00db6e;
+}
+
+.add-btn:active {
+  opacity: 0.5;
+}
+
+/* imported Delete button*/
+.button-24 {
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 10px 6px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  vertical-align: middle;
+  transition: all 0.2s ease-in-out;
+}
+
+.button-24:hover,
+.button-24:active {
+  background-color: initial;
+  color: #FF4742;
+}
+
+.button-24:active {
+  opacity: 0.5;
 }

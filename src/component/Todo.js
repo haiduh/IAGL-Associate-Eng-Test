@@ -1,13 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
 
-const Todo = ({ todo }) => (
+const Todo = ({ todo, onRemove }) => (
   <li className="todo-item">
-    <span
-      className="todo-item__text"
-    >
-      {todo}
-    </span>
+    {todo.task}
+    <button className="button-24" onClick={onRemove}>
+      🗑️
+    </button>
   </li>
 );
 

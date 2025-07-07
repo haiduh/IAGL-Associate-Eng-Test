@@ -12,6 +12,24 @@ const server = () => {
     res.json(await todoService.getTodos());
   });
 
+  server.post('/api/todo', async (req, res) => { //addTodo functionality
+  const { task } = req.body;
+  const todos = await todoService.addTodo(task);
+  res.status(201).json(todos);
+});
+
+  server.delete('/api/todo', async (req, res) => { //remove button functionality
+  try {
+    const { task } = req.body;
+    await todoService.removeTodo(task); 
+    const updatedTodos = await todoService.getTodos();
+    res.json(updatedTodos); //sends back updated list without needing a refresh
+  } catch (error) {
+    console.error('Error deleting todo:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+  });
+
   /**
   POST /api/todo
   {
